@@ -2,42 +2,43 @@
 452 -> 11
 82 -> 10
 9012 -> 12
-*/ 
+*/
 
-int GetSummNumberDigit (int num) //метод получает сумму цифр числа
+int GetSummNumberDigit(int num) //метод получает сумму цифр числа
 {
     string number = Convert.ToString(num);
     int summ = 0;
-    for (int count = 0; count < number.Length; count++);
-        summ = summ + number[count];
+    for (int i = 0; i < number.Length; i++)
+    {
+        summ += number[i];
+    }
     return summ;
-        
 }
 
 
 
 int GetNumber(string msg) //метод проверяет что ввели число
 {
-while(true)
-{
-Console.WriteLine(msg);
-string valueFromConsole = Console.ReadLine();
+    while (true)
+    {
+        Console.WriteLine(msg);
+        string valueFromConsole = Console.ReadLine();
 
-    if(int.TryParse(valueFromConsole, out int number))
-    {
+        if (int.TryParse(valueFromConsole, out int number))
+        {
             return number;
+        }
+        else
+        {
+            Console.WriteLine("Вы ввели не число. Введите число .");
+        }
     }
-    else
-    {
-        Console.WriteLine("Вы ввели не число. Введите число .");
-    }
-}
 }
 
 
 
 int number = GetNumber("Введите число: ");
 
-int result = GetSummNumberDigit (number);
+int result = GetSummNumberDigit(number);
 
-Console.WriteLine ($"{number} -> {result}");
+Console.WriteLine($"{number} -> {result}");
