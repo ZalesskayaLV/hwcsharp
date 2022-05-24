@@ -10,7 +10,7 @@ int GetSummNumberDigit(int num) //метод получает сумму циф�
     int summ = 0;
     for (int i = 0; i < number.Length; i++)
     {
-        summ += number[i];
+        summ += Convert.ToInt32(number[i].ToString());//number[i]-возвращает переменную типа char, поэтому необх конвертация char -> string -> int
     }
     return summ;
 }
