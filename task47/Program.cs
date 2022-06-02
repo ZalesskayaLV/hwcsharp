@@ -13,7 +13,7 @@ int GetDemension(string message)
     return demension;
 }
 
-//метод, который инициализирует массив вещественных чисел от -10 до 10
+//метод, который инициализирует массив вещественных чисел от -0.1 до 9.9
 double[,] InitMatrix(int firstDemension, int secondDemension)
 {
     double[,] matrix = new double[firstDemension, secondDemension];
@@ -22,7 +22,7 @@ double[,] InitMatrix(int firstDemension, int secondDemension)
     for (int i = 0; i < firstDemension; i++)
     {
         for (int j = 0; j < secondDemension; j++)
-            matrix[i, j] = Convert.ToDouble(rnd.Next(-10, 100)/10.0);
+            matrix[i, j] = Convert.ToDouble(rnd.Next(-10, 100) / 10.0);
     }
     return matrix;
 }
