@@ -16,9 +16,9 @@ int GetDemension(string message)
 }
 
 //метод, который инициализирует массив целых чисел от 1 до 9
-int [,] InitMatrix(int firstDemension, int secondDemension)
+int[,] InitMatrix(int firstDemension, int secondDemension)
 {
-    int [,] matrix = new int[firstDemension, secondDemension];
+    int[,] matrix = new int[firstDemension, secondDemension];
     Random rnd = new Random();
 
     for (int i = 0; i < firstDemension; i++)
@@ -30,9 +30,9 @@ int [,] InitMatrix(int firstDemension, int secondDemension)
 }
 
 //метод, который считает среднее арифметическое каждого столбца
-string GetAverageColumn(int [,] matrix)
+string GetAverageColumn(int[,] matrix)
 {
-    double summ=0;
+    double summ = 0;
     string result = String.Empty;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -40,18 +40,15 @@ string GetAverageColumn(int [,] matrix)
         {
             summ += matrix[j, i];
         }
-        summ=Math.Round(summ/matrix.GetLength(0), 1);
+        summ = Math.Round(summ / matrix.GetLength(0), 1);
         result += summ + "; ";
         summ = 0;
     }
     return result;
 }
 
-
-
-
 //метод, который печатает массив на консоль
-void PrintMatrix(int [,] matrix)
+void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -65,7 +62,7 @@ void PrintMatrix(int [,] matrix)
 int firstDemension = GetDemension("Введите количество строк матрицы: ");
 int secondDemension = GetDemension("Введите количество столбцов матрицы: ");
 
-int [,] resultMatrix = InitMatrix(firstDemension, secondDemension);
+int[,] resultMatrix = InitMatrix(firstDemension, secondDemension);
 PrintMatrix(resultMatrix);
 
 string result = GetAverageColumn(resultMatrix);
