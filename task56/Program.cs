@@ -3,12 +3,12 @@
  строку с наименьшей суммой элементов.*/
 
 //метод, который находит индекс строки с наименьшей суммой элементов
-int GetIndexOfMinRow(int [,] matrix)
+int GetIndexOfMinRow(int[,] matrix)
 {
     int indexOfMinRow = 0;
     int rowSumm = 0;
     int min = 0;
-    
+
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -16,20 +16,20 @@ int GetIndexOfMinRow(int [,] matrix)
             rowSumm += matrix[i, j];
         }
 
-            if(min>rowSumm)
-            {
-                min = rowSumm;
-                indexOfMinRow = i;
-            
-            }
+        if (min > rowSumm)
+        {
+            min = rowSumm;
+            indexOfMinRow = i;
 
-            rowSumm = 0;
+        }
+
+        rowSumm = 0;
     }
     return indexOfMinRow;
 }
 
 //метод, который печатает строку массива с наименьшей суммой элементов
-void PrintRow(int [,] array)
+void PrintRow(int[,] array)
 {
     int minRowIndex = GetIndexOfMinRow(array);
     for (int j = 0; j < array.GetLength(1); j++)
@@ -38,7 +38,7 @@ void PrintRow(int [,] array)
     }
 }
 
-    
+
 //метод, который переводит строку в число
 int GetNumber(string message)
 {
